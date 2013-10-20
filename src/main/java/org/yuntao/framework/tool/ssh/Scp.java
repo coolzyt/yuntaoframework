@@ -245,9 +245,9 @@ public class Scp {
 	  
 	  public static void main(String args[]){
 		  try{
-			  Scp.scpTo(new File("c:/out.sql"), "173.16.21.173", "root", "111111", "/");
+			  Scp.scpTo(new File("c:/out.sql"), "xxx.xxx.xxxx.x", "root", "password", "/");
 		  }catch(Throwable e){
 			  e.printStackTrace();
-		  }// Scp.scpFrom("/aaaa.123", "173.16.21.251", "root", "111111", new File("d:/aaaa.123"));
+		  }
 	  }
 }

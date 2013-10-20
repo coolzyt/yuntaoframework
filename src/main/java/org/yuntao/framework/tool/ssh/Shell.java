@@ -95,7 +95,7 @@ public class Shell {
 			ReadResultTask task = new ReadResultTask();
 			Future<String> f = executor.submit(task);
 			readLatch.countDown();
-			String result = f.get(5,TimeUnit.SECONDS);
+			String result = f.get(10,TimeUnit.SECONDS);
 			String[] lines = result.split("\r");
 			if(lines.length<3){
 				return "";
@@ -182,10 +182,9 @@ public class Shell {
 	
 	
 	public static void main(String[] args){
-		Shell sh = openChannel("173.16.21.251","root","111111","\\[\\w+@\\w+\\]#",false);
-		
+		Shell sh = openChannel("xx.xx.xx.xx","root","password","\\[.*?\\]#",true);
 		String result2 = sh.execute("pgrep -lo java");
 		sh.close();
-		System.out.print(result2.matches("\\d+\\s\\w+"));
+		System.out.print(result2);
 	}
 }
